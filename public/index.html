@@ -39,5 +39,34 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+    <!-- <script>
+      let autocomplete;
+      function initAutocomplete() {
+        autocomplete = new google.maps.places.Autocomplete(
+          document.getElementById('autocomplete'),
+          {
+            type: ['address'],
+            componentRestrictions: { country: ['US'] },
+            fields: ['formatted_address'],
+          }
+        );
+
+        autocomplete.addListener('place_changed', onPlaceChanged);
+      }
+
+      function onPlaceChanged() {
+        let place = autocomplete.getPlace();
+        if (!place.geometry) {
+          document.getElementById('autocomplete').placeholder = 'Enter a place';
+        } else {
+          document.getElementById('details').innerHTML = place.name;
+        }
+      }
+    </script>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCTP-mccCdMfP2vnA4moXdW4bOS8QFggs8&libraries=places&callback=initMap"
+      async
+      defer
+    ></script> -->
   </body>
 </html>
