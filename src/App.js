@@ -1,9 +1,9 @@
 import styles from './App.module.css';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { useHistory } from 'react-router';
 import Home from './components/Layout/Home';
 import { Route, Switch } from 'react-router-dom';
-import Result from './components/Result';
+import People from './components/Layout/People';
 import MainNav from './components/Layout/MainNav';
 
 const REPRESENT_API_KEY = process.env.REACT_APP_REPRESENT_API_KEY;
@@ -21,15 +21,15 @@ function App() {
     );
     const { offices, officials } = await response.json();
     setOfficialData({ offices, officials });
-    history.push('/result');
+    history.push('/people');
   };
 
   return (
-    <>
+    <div className={styles.app}>
       <MainNav />
       <Switch>
-        <Route path="/result" exact>
-          <Result
+        <Route path="/people" exact>
+          <People
             offices={officialData.offices}
             officials={officialData.officials}
           />
@@ -38,7 +38,7 @@ function App() {
           <Home getRep={getRepresentation} />
         </Route>
       </Switch>
-    </>
+    </div>
   );
 }
 

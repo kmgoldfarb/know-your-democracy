@@ -3,8 +3,8 @@ import styles from './AddressInput.module.css';
 
 const API_KEY = process.env.REACT_APP_API_KEY;
 
-const AddressInput = (props) => {
-  const onPlaceSelectedHandler = (place) => {
+const AddressInput = props => {
+  const onPlaceSelectedHandler = place => {
     props.addressHandler(place);
   };
 
@@ -17,7 +17,7 @@ const AddressInput = (props) => {
         componentRestrictions: { country: ['US'] },
         fields: ['formatted_address'],
       }}
-      style={{ width: '50%' }}
+      style={{ width: '80%' }}
       className={styles.input}
     />
   );

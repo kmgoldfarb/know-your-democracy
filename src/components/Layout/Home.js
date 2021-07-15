@@ -1,6 +1,5 @@
 import AddressInput from './AddressInput';
-
-const REPRESENT_API_KEY = process.env.REACT_APP_REPRESENT_API_KEY;
+import styles from './Home.module.css';
 
 function Home(props) {
   const addressInfoHandler = address => {
@@ -8,14 +7,17 @@ function Home(props) {
   };
 
   return (
-    <>
-      <h1>Know the political system around you!</h1>
-      <p>
-        Enter your address below to see your representatives across all levels
-        of government, as well as what elections are coming up for you.
-      </p>
-      <AddressInput addressHandler={addressInfoHandler} />
-    </>
+    <div className={styles.home}>
+      <div className={styles.content}>
+        <h1>Know the people in the political system around you!</h1>
+        <p>
+          If you live in the United States, enter your address below to see your
+          representatives across all levels of government, as well as what
+          elections are coming up for you.
+        </p>
+        <AddressInput addressHandler={addressInfoHandler} />
+      </div>
+    </div>
   );
 }
 

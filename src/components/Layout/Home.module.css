@@ -1,0 +1,16 @@
+.home {
+  height: 80vh;
+  width: 85vw;
+  background-color: white;
+  width: 85%;
+  margin: auto;
+  border: 3px solid #d1d1d1;
+  border-radius: 15px;
+}
+
+.content {
+  width: 80%;
+  margin: auto;
+  text-align: center;
+  vertical-align: middle;
+}

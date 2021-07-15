@@ -1,4 +1,5 @@
-import OfficialCard from './Layout/OfficialCard';
+import OfficialCard from './OfficialCard';
+import styles from './People.module.css';
 
 /**
  * @typedef {Object} Office
@@ -55,26 +56,27 @@ const getIndivOfficials = (officials, offices) => {
   }, []);
 };
 
-function Result({ offices, officials }) {
+function People({ offices, officials }) {
   const data = getIndivOfficials(officials, offices);
-  console.log(data);
   return (
-    <>
+    <div className={styles.people}>
       <h1>Get to know them</h1>
-      {data.map(x => (
-        <OfficialCard
-          name={x.name}
-          title={x.officeName}
-          party={x.party}
-          address={x.address}
-          phone={x.phones}
-          photo={x.photoUrl}
-          website={x.urls}
-          key={x.name}
-        />
-      ))}
-    </>
+      <div className={styles.cardgrid}>
+        {data.map(x => (
+          <OfficialCard
+            name={x.name}
+            title={x.officeName}
+            party={x.party}
+            address={x.address}
+            phone={x.phones}
+            photo={x.photoUrl}
+            website={x.urls}
+            key={x.name}
+          />
+        ))}
+      </div>
+    </div>
   );
 }
 
-export default Result;
+export default People;
