@@ -57,13 +57,22 @@ const getIndivOfficials = (officials, offices) => {
 
 function Result({ offices, officials }) {
   const data = getIndivOfficials(officials, offices);
-  console.log(data[4]);
+  console.log(data);
   return (
     <>
-      <h1>Results here</h1>
-      {data.map(x => {
-        <img src={x.photoUrl}></img>;
-      })}
+      <h1>Get to know them</h1>
+      {data.map(x => (
+        <OfficialCard
+          name={x.name}
+          title={x.officeName}
+          party={x.party}
+          address={x.address}
+          phone={x.phones}
+          photo={x.photoUrl}
+          website={x.urls}
+          key={x.name}
+        />
+      ))}
     </>
   );
 }
