@@ -1,11 +1,11 @@
 .home {
-  height: 80vh;
-  width: 85vw;
   background-color: white;
-  width: 85%;
-  margin: auto;
+  width: 60%;
+  margin: 0 auto;
   border: 3px solid #d1d1d1;
   border-radius: 15px;
+  padding: 1rem 1rem 3rem 1rem;
+  box-shadow: 5px 5px 20px 5px #232323;
 }
 
 .content {
@@ -13,4 +13,10 @@
   margin: auto;
   text-align: center;
   vertical-align: middle;
+}
+
+@media screen and (max-width: 768px) {
+  .home {
+    width: 75%;
+  }
 }

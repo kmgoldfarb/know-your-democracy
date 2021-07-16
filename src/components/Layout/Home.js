@@ -4,6 +4,7 @@ import styles from './Home.module.css';
 function Home(props) {
   const addressInfoHandler = address => {
     props.getRep(address);
+    props.getElec(address);
   };
 
   return (

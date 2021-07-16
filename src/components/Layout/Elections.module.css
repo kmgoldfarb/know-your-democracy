@@ -1,0 +1,16 @@
+.elections {
+  background-color: white;
+  width: 85%;
+  margin: auto;
+  border: 5px solid #d1d1d1;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 5px 5px 25px 5px #232323;
+}
+
+.content {
+  text-align: center;
+  width: 85%;
+  margin: auto;
+  padding: 1rem 1rem 1rem 2rem;
+}

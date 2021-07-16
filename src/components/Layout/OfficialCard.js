@@ -13,7 +13,35 @@ const OfficialCard = props => {
   const phoneNum = makePhoneClickable(props.phone);
 
   return (
-    <div className={styles.card}>
+    <tr className={styles.tablerow}>
+      <td>
+        <h3>{props.name}</h3>
+      </td>
+      <td>
+        <h4>{props.title}</h4>
+      </td>
+      <td>
+        <p>{props.party}</p>
+      </td>
+      <td>
+        <p>{props.phone ? phoneNum : null}</p>
+      </td>
+      <td>
+        <p>
+          {props.website ? (
+            <a href={props.website} target="_blank">
+              Website
+            </a>
+          ) : null}
+        </p>
+      </td>
+      <td>
+        <p className={styles.address}>{props.address ? stringAddress : null}</p>
+      </td>
+    </tr>
+  );
+  {
+    /* <div className={styles.card}>
       <div className={styles.name}>
         <h3>{props.name}</h3>
         <h4>{props.title}</h4>
@@ -24,9 +52,9 @@ const OfficialCard = props => {
       <p className={styles.address}>{props.address ? stringAddress : null}</p>
       {/* <div className={styles.image}>
         <img src={props.photo} />
-      </div> */}
-    </div>
-  );
+      </div> 
+    </div> */
+  }
 };
 
 export default OfficialCard;

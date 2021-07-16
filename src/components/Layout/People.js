@@ -58,23 +58,39 @@ const getIndivOfficials = (officials, offices) => {
 
 function People({ offices, officials }) {
   const data = getIndivOfficials(officials, offices);
+  console.log(data);
   return (
     <div className={styles.people}>
-      <h1>Get to know them</h1>
-      <div className={styles.cardgrid}>
-        {data.map(x => (
-          <OfficialCard
-            name={x.name}
-            title={x.officeName}
-            party={x.party}
-            address={x.address}
-            phone={x.phones}
-            photo={x.photoUrl}
-            website={x.urls}
-            key={x.name}
-          />
-        ))}
-      </div>
+      <h1>Get to know who represents you</h1>
+      {data.length === 0 && (
+        <p>Please enter your address on the home page to see results.</p>
+      )}
+      <table className={styles.table}>
+        <thead className={styles.head}>
+          <tr>
+            <th>Name</th>
+            <th>Title</th>
+            <th>Party</th>
+            <th>Phone</th>
+            <th>Website</th>
+            <th>Address</th>
+          </tr>
+        </thead>
+        <tbody>
+          {data.map(x => (
+            <OfficialCard
+              name={x.name}
+              title={x.officeName}
+              party={x.party}
+              address={x.address}
+              phone={x.phones}
+              photo={x.photoUrl}
+              website={x.urls}
+              key={x.name}
+            />
+          ))}
+        </tbody>
+      </table>
     </div>
   );
 }

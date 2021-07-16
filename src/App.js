@@ -4,7 +4,8 @@ import { useHistory } from 'react-router';
 import Home from './components/Layout/Home';
 import { Route, Switch } from 'react-router-dom';
 import People from './components/Layout/People';
-import MainNav from './components/Layout/MainNav';
+import Elections from './components/Layout/Elections';
+import MainNav from './components/UI/MainNav';
 
 const REPRESENT_API_KEY = process.env.REACT_APP_REPRESENT_API_KEY;
 
@@ -13,15 +14,27 @@ function App() {
     offices: [],
     officials: [],
   });
+  const [electionData, setElectionData] = useState({
+    pollingLocations: [],
+    contests: [],
+  });
   const history = useHistory();
-  const getRepresentation = async address => {
+  const getRepData = async address => {
     const userAddress = address.formatted_address;
-    const response = await fetch(
+    const repResponse = await fetch(
       `https://civicinfo.googleapis.com/civicinfo/v2/representatives?address=${userAddress}&key=${REPRESENT_API_KEY}`
     );
-    const { offices, officials } = await response.json();
+    const { offices, officials } = await repResponse.json();
     setOfficialData({ offices, officials });
     history.push('/people');
+  };
+  const getElectionData = async address => {
+    const userAddress = address.formatted_address;
+    const electionResponse = await fetch(
+      `https://www.googleapis.com/civicinfo/v2/voterinfo?address=${userAddress}&returnAllAvailableData=true&key=${REPRESENT_API_KEY}`
+    );
+    const { pollingLocations, contests } = await electionResponse.json();
+    setElectionData({ pollingLocations, contests });
   };
 
   return (
@@ -34,8 +47,14 @@ function App() {
             officials={officialData.officials}
           />
         </Route>
-        <Route path="/">
-          <Home getRep={getRepresentation} />
+        <Route path="/elections" exact>
+          <Elections
+            pollingLocations={electionData.pollingLocations}
+            contests={electionData.contests}
+          />
+        </Route>
+        <Route path="/" exact>
+          <Home getRep={getRepData} getElec={getElectionData} />
         </Route>
       </Switch>
     </div>

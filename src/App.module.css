@@ -4,10 +4,10 @@
   overflow-y: auto;
   margin: 0;
   padding: 0;
-  background: rgb(191, 0, 0);
+  background: rgb(241, 82, 82);
   background: linear-gradient(
-    270deg,
-    rgba(191, 0, 0, 1) 0%,
-    rgba(0, 0, 198, 1) 100%
+    290deg,
+    rgba(241, 82, 82, 1) 0%,
+    rgba(76, 76, 252, 1) 100%
   );
 }
