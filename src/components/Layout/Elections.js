@@ -11,7 +11,7 @@ const Elections = ({ pollingLocations, contests }) => {
           <p>
             The Google Civic API has no upcoming election data for your address.
             Check with local sources to find more information. Election data is
-            usually available 4 to 6 weeks before an election.
+            usually available around 4 weeks before an election.
           </p>
         )}
       </div>

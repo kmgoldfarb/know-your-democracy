@@ -2,10 +2,16 @@
   background-color: white;
   width: 90%;
   margin: auto;
-  border: 5px solid #d1d1d1;
+  border: 3px solid #d1d1d1;
   border-radius: 15px;
   text-align: center;
-  box-shadow: 5px 5px 25px 5px #232323;
+  box-shadow: 3px 3px 10px 3px #232323;
+  font-family: 'Roboto', sans-serif;
+}
+
+.people p {
+  width: 80%;
+  margin: 1rem auto;
 }
 
 .table {
@@ -25,6 +31,12 @@
 
 .table tbody td {
   padding: 0.5rem;
+}
+
+@media screen and (min-width: 760px) {
+  .table tbody td:nth-child(6) {
+    width: 25%;
+  }
 }
 
 @media screen and (max-width: 760px) {

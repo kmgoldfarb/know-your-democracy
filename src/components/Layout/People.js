@@ -66,16 +66,18 @@ function People({ offices, officials }) {
         <p>Please enter your address on the home page to see results.</p>
       )}
       <table className={styles.table}>
-        <thead className={styles.head}>
-          <tr>
-            <th>Name</th>
-            <th>Title</th>
-            <th>Party</th>
-            <th>Phone</th>
-            <th>Website</th>
-            <th>Address</th>
-          </tr>
-        </thead>
+        {data.length > 0 && (
+          <thead className={styles.head}>
+            <tr>
+              <th>Name</th>
+              <th>Title</th>
+              <th>Party</th>
+              <th>Phone</th>
+              <th>Website</th>
+              <th>Address</th>
+            </tr>
+          </thead>
+        )}
         <tbody>
           {data.map(x => (
             <OfficialCard

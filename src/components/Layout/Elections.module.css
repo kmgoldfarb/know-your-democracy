@@ -2,15 +2,15 @@
   background-color: white;
   width: 85%;
   margin: auto;
-  border: 5px solid #d1d1d1;
+  border: 3px solid #d1d1d1;
   border-radius: 15px;
   text-align: center;
-  box-shadow: 5px 5px 25px 5px #232323;
+  box-shadow: 3px 3px 10px 3px #232323;
 }
 
 .content {
   text-align: center;
   width: 85%;
   margin: auto;
-  padding: 1rem 1rem 1rem 2rem;
+  padding: 1rem 1rem 2rem 1rem;
 }

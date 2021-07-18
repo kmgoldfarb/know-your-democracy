@@ -1,58 +1,7 @@
-/* @media screen and (min-width: 1024px) {
-  .card {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem;
-    border-bottom: 2px solid #454545;
-    margin: 1rem;
-    text-align: left;
-  }
-
-  .name {
-    padding-right: 1rem;
-  }
-
-  .address {
-    padding-left: 1rem;
-    flex-basis: 15em;
-  }
-
-  .card a {
-    text-decoration: none;
-  }
-
-  .card p {
-    padding-left: 0.5rem;
-  }
+.tablerow td {
+  font-family: 'Roboto', sans-serif;
 }
 
-@media screen and (min-width: 426px) and (max-width: 1023px) {
-  .card {
-    display: block;
-    text-align: center;
-    border-bottom: 2px solid #454545;
-  }
-
-  .address {
-    padding-left: 1rem;
-    flex-basis: 15em;
-  }
-
-  .card a {
-    text-decoration: none;
-  }
+.tablerow td a {
+  text-decoration: none;
 }
-
-@media screen and (max-width: 426px) {
-  .card {
-    display: inline-block;
-    text-align: center;
-    border-bottom: 1px solid #454545;
-  }
-
-  .card a {
-    text-decoration: none;
-  }
-}
- */
