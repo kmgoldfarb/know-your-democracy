@@ -19,6 +19,7 @@ function App() {
     pollingLocations: [],
     contests: [],
   });
+  const [showElections, setShowElections] = useState(false);
   const history = useHistory();
   const getRepData = async address => {
     const userAddress = address.formatted_address;
@@ -37,11 +38,12 @@ function App() {
     const { election, pollingLocations, contests } =
       await electionResponse.json();
     setElectionData({ election, pollingLocations, contests });
+    setShowElections(true);
   };
 
   return (
     <div className={styles.app}>
-      <MainNav />
+      <MainNav showElections={showElections} />
       <Switch>
         <Route path="/people" exact>
           <People

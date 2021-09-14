@@ -2,7 +2,7 @@ import { NavLink } from 'react-router-dom';
 import Button from './Button';
 import styles from './MainNav.module.css';
 
-const MainNav = () => {
+const MainNav = props => {
   return (
     <div className={styles.container}>
       <NavLink
@@ -20,13 +20,15 @@ const MainNav = () => {
       >
         <Button btnName="People" />
       </NavLink>
-      <NavLink
-        to="/elections"
-        className={styles.navlink}
-        activeClassName={styles.active}
-      >
-        <Button btnName="Elections" />
-      </NavLink>
+      {props.showElections && (
+        <NavLink
+          to="/elections"
+          className={styles.navlink}
+          activeClassName={styles.active}
+        >
+          <Button btnName="Elections" />
+        </NavLink>
+      )}
     </div>
   );
 };
