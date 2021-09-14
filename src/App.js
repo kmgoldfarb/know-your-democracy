@@ -2,7 +2,7 @@ import styles from './App.module.css';
 import { useState } from 'react';
 import { useHistory } from 'react-router';
 import Home from './components/Layout/Home';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, Redirect } from 'react-router-dom';
 import People from './components/Layout/People';
 import Elections from './components/Layout/Elections';
 import MainNav from './components/UI/MainNav';
@@ -57,6 +57,7 @@ function App() {
         <Route path="/" exact>
           <Home getRep={getRepData} getElec={getElectionData} />
         </Route>
+        <Redirect to="/" />
       </Switch>
     </div>
   );
