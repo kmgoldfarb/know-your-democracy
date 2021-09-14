@@ -15,6 +15,7 @@ function App() {
     officials: [],
   });
   const [electionData, setElectionData] = useState({
+    election: [],
     pollingLocations: [],
     contests: [],
   });
@@ -33,8 +34,9 @@ function App() {
     const electionResponse = await fetch(
       `https://www.googleapis.com/civicinfo/v2/voterinfo?address=${userAddress}&returnAllAvailableData=true&key=${REPRESENT_API_KEY}`
     );
-    const { pollingLocations, contests } = await electionResponse.json();
-    setElectionData({ pollingLocations, contests });
+    const { election, pollingLocations, contests } =
+      await electionResponse.json();
+    setElectionData({ election, pollingLocations, contests });
   };
 
   return (
@@ -48,10 +50,7 @@ function App() {
           />
         </Route>
         <Route path="/elections" exact>
-          <Elections
-            pollingLocations={electionData.pollingLocations}
-            contests={electionData.contests}
-          />
+          <Elections data={electionData} />
         </Route>
         <Route path="/" exact>
           <Home getRep={getRepData} getElec={getElectionData} />

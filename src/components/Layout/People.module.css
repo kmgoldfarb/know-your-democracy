@@ -1,7 +1,7 @@
 .people {
   background-color: white;
   width: 90%;
-  margin: auto;
+  margin: 1rem auto;
   border: 3px solid #d1d1d1;
   border-radius: 15px;
   text-align: center;
@@ -35,7 +35,13 @@
 
 @media screen and (min-width: 760px) {
   .table tbody td:nth-child(6) {
-    width: 25%;
+    width: 20%;
+  }
+  .table tbody td:nth-child(2) {
+    width: 20%;
+  }
+  .table tbody td:nth-child(1) {
+    width: 20%;
   }
 }
 
