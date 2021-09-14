@@ -14,7 +14,7 @@ function Home(props) {
         <p>
           If you live in the United States, enter your address below to see your
           representatives across all levels of government, as well as what
-          elections are coming up for you.
+          elections might be coming up for you.
         </p>
         <AddressInput addressHandler={addressInfoHandler} />
       </div>

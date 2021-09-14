@@ -29,7 +29,7 @@ const OfficialCard = props => {
       <td>
         <p>
           {props.website ? (
-            <a href={props.website} target="_blank">
+            <a href={props.website} target="_blank" rel="noreferrer">
               Website
             </a>
           ) : null}
