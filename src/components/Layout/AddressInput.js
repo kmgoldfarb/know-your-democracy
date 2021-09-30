@@ -8,7 +8,7 @@ const AddressInput = props => {
 
   return (
     <Autocomplete
-      apiKey={process.env.REACT_APP_API_KEY}
+      apiKey={process.env.REACT_APP_ADDRESS_API_KEY}
       onPlaceSelected={onPlaceSelectedHandler}
       options={{
         types: ['address'],
