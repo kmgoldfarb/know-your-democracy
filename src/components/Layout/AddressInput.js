@@ -1,8 +1,6 @@
 import Autocomplete from 'react-google-autocomplete';
 import styles from './AddressInput.module.css';
 
-const API_KEY = process.env.REACT_APP_API_KEY;
-
 const AddressInput = props => {
   const onPlaceSelectedHandler = place => {
     props.addressHandler(place);
@@ -10,7 +8,7 @@ const AddressInput = props => {
 
   return (
     <Autocomplete
-      apiKey={API_KEY}
+      apiKey={process.env.REACT_APP_API_KEY}
       onPlaceSelected={onPlaceSelectedHandler}
       options={{
         types: ['address'],

@@ -7,8 +7,6 @@ import People from './components/Layout/People';
 import Elections from './components/Layout/Elections';
 import MainNav from './components/UI/MainNav';
 
-const REPRESENT_API_KEY = process.env.REACT_APP_REPRESENT_API_KEY;
-
 function App() {
   const [officialData, setOfficialData] = useState({
     offices: [],
@@ -24,7 +22,7 @@ function App() {
   const getRepData = async address => {
     const userAddress = address.formatted_address;
     const repResponse = await fetch(
-      `https://civicinfo.googleapis.com/civicinfo/v2/representatives?address=${userAddress}&key=${REPRESENT_API_KEY}`
+      `https://civicinfo.googleapis.com/civicinfo/v2/representatives?address=${userAddress}&key=${process.env.REACT_APP_REPRESENT_API_KEY}`
     );
     const { offices, officials } = await repResponse.json();
     setOfficialData({ offices, officials });
@@ -33,7 +31,7 @@ function App() {
   const getElectionData = async address => {
     const userAddress = address.formatted_address;
     const electionResponse = await fetch(
-      `https://www.googleapis.com/civicinfo/v2/voterinfo?address=${userAddress}&returnAllAvailableData=true&key=${REPRESENT_API_KEY}`
+      `https://www.googleapis.com/civicinfo/v2/voterinfo?address=${userAddress}&returnAllAvailableData=true&key=${process.env.REACT_APP_REPRESENT_API_KEY}`
     );
     const { election, pollingLocations, contests } =
       await electionResponse.json();

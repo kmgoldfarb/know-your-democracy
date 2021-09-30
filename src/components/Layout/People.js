@@ -18,7 +18,7 @@ function People({ offices, officials }) {
   console.log(data);
   return (
     <div className={styles.people}>
-      <h1>Get to know who represents you</h1>
+      <h1>Know who represents you</h1>
       {data.length === 0 && (
         <p>Please enter your address on the home page to see results.</p>
       )}
